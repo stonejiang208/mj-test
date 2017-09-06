@@ -1,1 +1,5 @@
-hdhz-test
+test
+.depend.test
+.obj/
+GNUmakefile
+GNUmakefile.*
