@@ -1,0 +1,16 @@
+// -*- MPC -*- 
+//===========================================================================
+//* Time-stamp: <2017-03-25 02:11:50 by root> 
+// @file test.mpc
+// * $Id: test.mpc 2017-03-24 09:41:40 root Exp $
+// *
+// * @author:Stone Jiang <jiangtao@tao-studio.net>
+//===========================================================================
+
+project(test):aceexe{
+  exename  = test
+  exeout = .
+  includes  += .
+
+}
+
