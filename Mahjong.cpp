@@ -1,8 +1,14 @@
 #include "Mahjong.h"
+#include <cstdint>
+#include <stdio.h>
 
+#if 0
 #include "ace/Basic_Types.h"
 #include "ace/Log_Msg.h"
+#endif
 
+typedef uint16_t ACE_UINT16;
+typedef uint32_t ACE_UINT32;
 
 #ifndef HIWORD
 #define HIWORD(_dw)     ((ACE_UINT16)((((ACE_UINT32)(_dw)) >> 16) & 0xffff))
@@ -306,9 +312,8 @@ namespace MJ
     {
       if (hand_datas[3][0] > 4)
       {
-        ACE_DEBUG((LM_DEBUG,
-          ACE_TEXT("(%P|%T) hong zhong is more than 4 cards.\n")));
-        break;
+          printf ("more than 4 hong zhong \n");
+          break;
       }
       for (int i = 0; i < 3; i++)
       {
@@ -316,9 +321,7 @@ namespace MJ
         {
           if (hand_datas[i][j] >= 4)
           {
-            ACE_DEBUG((LM_DEBUG,
-              ACE_TEXT("(%P|%T) 0x%08x is more than 4 cards.\n"),
-              MAKELONG(j, i + 1)));
+              printf ("more than 4 0x%08x \n", MAKELONG (j,i+1));
           }
         }
       }
@@ -347,8 +350,9 @@ namespace MJ
     }
     else  if (hand_datas[3][0] == 4)
     {
-      ACE_DEBUG((LM_DEBUG,
-        ACE_TEXT("(%P|%T) win as 4 hong zhong\n")));
+        //      ACE_DEBUG((LM_DEBUG,
+        //                  ACE_TEXT("(%P|%T) win as 4 hong zhong\n")));
+        printf ("win as 4 hong zhong.\n");
     }
   }
 
